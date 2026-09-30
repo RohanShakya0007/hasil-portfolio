@@ -7,7 +7,6 @@ import { worksGroups } from "../data";
 const DESKTOP_COLUMNS = 3;
 
 const COLUMN_CLASS = {
-  1: "lg:grid-cols-1",
   2: "lg:grid-cols-2",
   3: "lg:grid-cols-3",
 };
@@ -23,6 +22,14 @@ const REVEAL = {
 
 const VIEWPORT = { once: true, amount: 0.15, margin: "0px 0px -80px 0px" };
 
+const cardMotion = (i) => ({
+  initial: "hidden",
+  whileInView: "show",
+  viewport: VIEWPORT,
+  variants: REVEAL,
+  custom: i,
+});
+
 function useOpenProject() {
   const [project, setProject] = useState(null);
   const open = useCallback((group, clip) => setProject({ group, clip }), []);
@@ -37,10 +44,12 @@ function spread(items, columns) {
 }
 
 function getLayout(clips) {
-  const featured = clips[0]?.aspect === "landscape" && clips[1]?.aspect === "portrait";
-  return featured
-    ? { featured: clips.slice(0, 2), masonry: clips.slice(2), columns: DESKTOP_COLUMNS }
-    : { featured: [], masonry: clips, columns: Math.min(DESKTOP_COLUMNS, clips.length) };
+  const portrait = clips.filter((clip) => clip.aspect === "portrait");
+  return {
+    landscape: clips.filter((clip) => clip.aspect === "landscape"),
+    portrait,
+    columns: portrait.length > 2 ? DESKTOP_COLUMNS : 2,
+  };
 }
 
 function WorksGrid() {
@@ -64,59 +73,50 @@ function WorksGrid() {
 }
 
 function Group({ group, onOpen }) {
-  const { featured, masonry, columns } = getLayout(group.clips);
+  const { landscape, portrait, columns } = getLayout(group.clips);
 
   return (
     <div>
       <GroupHeader group={group} />
 
-      {featured.length > 0 && (
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[auto_auto] lg:gap-8">
-          {featured.map((clip, i) => (
+      {landscape.length > 0 && (
+        <div
+          className={`grid grid-cols-2 gap-6 lg:gap-8 ${
+            landscape.length === 1 ? "max-w-3xl" : ""
+          }`}
+        >
+          {landscape.map((clip, i) => (
             <ReelCard
               key={clip.id}
-              aspect={clip.aspect}
+              aspect="landscape"
               video={clip.video}
               title={clip.title}
               category={clip.category}
               onClick={() => onOpen(clip)}
-              eager
-              className={
-                i === 0
-                  ? "works-feature"
-                  : "works-feature-tall mx-auto w-full max-w-[15rem] lg:max-w-none"
-              }
-              motionProps={{
-                initial: "hidden",
-                whileInView: "show",
-                viewport: VIEWPORT,
-                variants: REVEAL,
-                custom: i,
-              }}
+              eager={i === 0}
+              motionProps={cardMotion(i)}
             />
           ))}
         </div>
       )}
 
-      {masonry.length > 0 && (
-        <div className={`mt-6 grid grid-cols-2 gap-6 lg:gap-8 ${COLUMN_CLASS[columns]}`}>
-          {spread(masonry, columns).map((column, c) => (
+      {portrait.length > 0 && (
+        <div
+          className={`grid grid-cols-2 gap-6 lg:gap-8 ${COLUMN_CLASS[columns]} ${
+            landscape.length > 0 ? "mt-6 lg:mt-8" : ""
+          }`}
+        >
+          {spread(portrait, columns).map((column, c) => (
             <div key={c} className="flex flex-col gap-6 lg:gap-8">
               {column.map((clip, i) => (
                 <ReelCard
                   key={clip.id}
-                  aspect={clip.aspect}
+                  aspect="portrait"
                   video={clip.video}
                   title={clip.title}
                   category={clip.category}
                   onClick={() => onOpen(clip)}
-                  motionProps={{
-                    initial: "hidden",
-                    whileInView: "show",
-                    viewport: VIEWPORT,
-                    variants: REVEAL,
-                    custom: c * 0.08 + i * 0.05,
-                  }}
+                  motionProps={cardMotion(c * 0.08 + i * 0.05)}
                 />
               ))}
             </div>
