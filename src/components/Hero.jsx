@@ -25,7 +25,7 @@ function Hero() {
           className="max-w-4xl text-4xl font-semibold leading-[1.15] tracking-tight text-ink md:text-6xl"
         >
           <motion.span variants={ITEM} className="block">
-            Hi, I&apos;m Hasil  a video editor
+          &apos;Video editor
           </motion.span>
           <motion.span variants={ITEM} className="block">
             &amp; colorist turning raw footage
