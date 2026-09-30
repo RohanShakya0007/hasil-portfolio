@@ -51,7 +51,12 @@ function Hero() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <ReelCard aspect="landscape" video="v1.mp4" />
+            <ReelCard
+              aspect="landscape"
+              video="v1.mp4"
+              title="Every Frame Has A Story"
+              category="Showreel"
+            />
           </motion.div>
 
           <motion.div

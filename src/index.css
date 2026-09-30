@@ -26,3 +26,20 @@ body {
   background: rgba(245, 245, 245, 0.25);
   color: #fff;
 }
+
+/* Featured works row: the landscape card is half the viewport (capped so it
+   always fits the 7xl container) and the tall portrait beside it is sized so
+   both cards share the exact same height. */
+@media (min-width: 1024px) {
+  :root {
+    --works-feature-w: min(50vw, 55rem);
+  }
+
+  .works-feature {
+    width: var(--works-feature-w);
+  }
+
+  .works-feature-tall {
+    width: calc(var(--works-feature-w) * 9 / 16 * 9 / 16);
+  }
+}
