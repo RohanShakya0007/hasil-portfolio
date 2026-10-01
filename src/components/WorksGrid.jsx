@@ -60,7 +60,7 @@ function WorksGrid() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <SectionHeader />
 
-        <div className="flex flex-col gap-24 md:gap-32">
+        <div className="flex flex-col gap-20 md:gap-32">
           {worksGroups.map((group) => (
             <Group key={group.client} group={group} onOpen={(clip) => open(group, clip)} />
           ))}
@@ -81,8 +81,8 @@ function Group({ group, onOpen }) {
 
       {landscape.length > 0 && (
         <div
-          className={`grid grid-cols-2 gap-6 lg:gap-8 ${
-            landscape.length === 1 ? "max-w-3xl" : ""
+          className={`grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 ${
+            landscape.length === 1 ? "sm:max-w-3xl" : ""
           }`}
         >
           {landscape.map((clip, i) => (
@@ -102,12 +102,12 @@ function Group({ group, onOpen }) {
 
       {portrait.length > 0 && (
         <div
-          className={`grid grid-cols-2 gap-6 lg:gap-8 ${COLUMN_CLASS[columns]} ${
+          className={`grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 ${COLUMN_CLASS[columns]} ${
             landscape.length > 0 ? "mt-6 lg:mt-8" : ""
           }`}
         >
           {spread(portrait, columns).map((column, c) => (
-            <div key={c} className="flex flex-col gap-6 lg:gap-8">
+            <div key={c} className="contents sm:flex sm:flex-col sm:gap-6 lg:gap-8">
               {column.map((clip, i) => (
                 <ReelCard
                   key={clip.id}
@@ -152,7 +152,7 @@ function SectionHeader() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.6 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="mb-20 md:mb-24"
+      className="mb-14 md:mb-24"
     >
       <h2 className="text-4xl font-bold tracking-tight text-ink md:text-5xl">Works</h2>
       <p className="mt-3 text-sm tracking-wide text-muted">

@@ -13,6 +13,15 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (!menuOpen) return undefined;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -27,10 +36,10 @@ function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-safe pb-3.5 pt-safe md:px-10 md:py-4">
         <a
           href="#home"
-          className="font-script text-2xl leading-none text-ink transition-opacity hover:opacity-70 md:text-3xl"
+          className="text-[13px] font-bold tracking-tight transition-colors text-paper"
         >
           edits.byhasil
         </a>
@@ -74,7 +83,7 @@ function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className="border-t border-white/10 bg-black/90 backdrop-blur-md md:hidden"
         >
-          <ul className="flex flex-col gap-1 px-6 py-4">
+          <ul className="flex flex-col gap-1 px-safe py-4 pb-safe">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a

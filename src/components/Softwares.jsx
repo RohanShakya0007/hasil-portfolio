@@ -21,7 +21,7 @@ function Softwares() {
           Softwares
         </motion.h2>
 
-        <div className="grid grid-cols-2 justify-items-center gap-x-8 gap-y-12 sm:grid-cols-4 md:grid-cols-4">
+        <div className="grid grid-cols-2 justify-items-center gap-x-5 gap-y-10 sm:grid-cols-3 sm:gap-x-8 sm:gap-y-12 md:grid-cols-4">
           {softwares.map((sw, i) => (
             <motion.div
               key={sw.id}
@@ -31,7 +31,7 @@ function Softwares() {
               transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.06 }}
               className="group flex flex-col items-center gap-4"
             >
-              <div className="relative h-24 w-24 md:h-28 md:w-28">
+              <div className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28">
                 <span
                   aria-hidden="true"
                   className="absolute inset-4 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-70"

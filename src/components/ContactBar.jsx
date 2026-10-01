@@ -26,7 +26,7 @@ function ContactBar() {
     <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
       <a
         href={contact.phoneHref}
-        className="flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-ink"
+        className="flex min-w-0 items-center gap-2.5 py-1 text-sm text-muted transition-colors hover:text-ink"
       >
         <Icon path={PHONE} />
         <span>{contact.phone}</span>
@@ -37,7 +37,7 @@ function ContactBar() {
 
       <a
         href="#"
-        className="flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-ink"
+        className="flex min-w-0 items-center gap-2.5 py-1 text-sm text-muted transition-colors hover:text-ink"
       >
         <Icon path={PIN} />
         <span>{contact.location}</span>
@@ -48,7 +48,7 @@ function ContactBar() {
 
       <a
         href={contact.emailHref}
-        className="flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-ink"
+        className="flex min-w-0 items-center gap-2.5 py-1 text-sm text-muted transition-colors hover:text-ink"
       >
         <Icon path={MAIL} />
         <span>{contact.email}</span>
@@ -61,14 +61,16 @@ function ContactBar() {
         href={contact.linkedinHref}
         target="_blank"
         rel="noreferrer"
-        className="flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-ink"
+        className="flex min-w-0 items-center gap-2.5 py-1 text-sm text-muted transition-colors hover:text-ink"
       >
-        <span className="flex h-7 w-7 items-center justify-center rounded-md bg-white text-black">
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white text-black">
           <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
             <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45Z" />
           </svg>
         </span>
-        <span className="max-w-[16rem] truncate">{contact.linkedin}</span>
+        <span className="min-w-0 max-w-[10rem] truncate sm:max-w-[16rem]">
+          {contact.linkedin}
+        </span>
       </a>
     </div>
   );

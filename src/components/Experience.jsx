@@ -15,7 +15,7 @@ function Experience() {
           Experience
         </motion.h2>
 
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-12 md:gap-16">
           {experience.map((entry, i) => (
             <motion.div
               key={entry.company + entry.range}
@@ -23,10 +23,10 @@ function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.08 }}
-              className="grid grid-cols-1 items-start gap-8 border-b border-white/10 pb-12 last:border-0 md:grid-cols-2"
+              className="grid grid-cols-1 items-start gap-6 border-b border-white/10 pb-10 last:border-0 sm:gap-8 md:grid-cols-2 md:pb-12"
             >
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-semibold text-ink">
+                <h3 className="text-xl font-semibold text-ink sm:text-2xl">
                   {entry.company}
                 </h3>
                 <span className="text-sm tracking-wide text-muted">
@@ -35,7 +35,7 @@ function Experience() {
               </div>
 
               <div className="relative md:border-l md:border-gray-700 md:pl-10">
-                <h4 className="mb-3 text-lg font-medium text-ink">
+                <h4 className="mb-3 text-base font-medium text-ink sm:text-lg">
                   Role - {entry.role}
                 </h4>
                 <ul className="flex flex-col gap-2">

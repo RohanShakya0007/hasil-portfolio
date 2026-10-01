@@ -1,12 +1,15 @@
+const cvModules = import.meta.glob("../CV/*.pdf", { eager: true });
+const cvUrl = Object.values(cvModules)[0]?.default;
+
 export const contact = {
-  phone: "+977 9812345678",
-  phoneHref: "tel:+9779812345678",
+  phone: "+977 -9868134129",
+  phoneHref: "tel:+977-9868134129",
   location: "Kathmandu, Nepal",
-  email: "hasil.shakya@gmail.com",
-  emailHref: "mailto:hasil.shakya@gmail.com",
+  email: "hshakya744@gmail.com",
+  emailHref: "mailto:hshakya744@gmail.com",
   linkedin: "linkedin.com/in/hasil-shakya",
-  linkedinHref: "https://www.linkedin.com/in/hasil-shakya",
-  cv: "/Hasil_Shakya_CV.pdf",
+  linkedinHref: "https://www.linkedin.com/in/shakyahasil/",
+  cv: cvUrl,
 };
 
 export const worksGroups = [
@@ -23,6 +26,11 @@ export const worksGroups = [
       { id: "V6", aspect: "portrait", title: "Motion Reel 05", category: "Short Form", video: "G v6.mp4" },
       { id: "V7", aspect: "portrait", title: "Motion Reel 06", category: "Short Form", video: "G v7.mp4" },
       { id: "V8", aspect: "landscape", title: "Motion Reel 02 — Alt Cut", category: "Alternate Cut", video: "G v3 2.mp4" },
+      { id: "V23", aspect: "portrait", title: "Social Reel 13", category: "Short Form", video: "G v8.mp4" },
+      { id: "V24", aspect: "portrait", title: "Social Reel 14", category: "Short Form", video: "G v9.mp4" },
+      { id: "V25", aspect: "portrait", title: "Social Reel 15", category: "Short Form", video: "G v10.mp4" },
+      { id: "V26", aspect: "portrait", title: "Social Reel 16", category: "Short Form", video: "G v11.mp4" },
+
     ],
   },
   {

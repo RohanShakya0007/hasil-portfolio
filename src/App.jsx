@@ -1,3 +1,4 @@
+import CinematicBackground from "./components/CinematicBackground";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import WorksGrid from "./components/WorksGrid";
@@ -8,7 +9,8 @@ import About from "./components/About";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#e5e5e5]">
+    <div className="relative min-h-screen text-[#e5e5e5]">
+      <CinematicBackground />
       <Navbar />
       <main>
         <Hero />

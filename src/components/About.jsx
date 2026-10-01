@@ -12,12 +12,12 @@ function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-16 text-4xl font-bold tracking-tight text-ink md:text-5xl"
+          className="mb-12 text-4xl font-bold tracking-tight text-ink md:mb-16 md:text-5xl"
         >
           About
         </motion.h2>
 
-        <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-16">
+        <div className="grid grid-cols-1 items-start gap-10 sm:max-w-sm md:max-w-none md:grid-cols-2 md:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,8 +48,8 @@ function About() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           >
-            <h3 className="text-xl font-medium text-ink">Profile</h3>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
+            <h3 className="text-lg font-medium text-ink sm:text-xl">Profile</h3>
+            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted sm:text-base">
               I&apos;m Hasil Raj Shakya, a video editor and colorist from
               Kathmandu, Nepal. I work across short-form Reels, brand
               campaigns, and long-form edits — shaping raw footage into clear,
@@ -73,8 +73,8 @@ function About() {
 
             <a
               href={contact.cv}
-              download
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-gray-200 hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.4)]"
+              download="Hasil-Raj-Shakya-CV.pdf"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all hover:bg-gray-200 hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.4)] sm:w-auto"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
                 <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" />
@@ -84,10 +84,21 @@ function About() {
           </motion.div>
         </div>
 
-        <footer id="contact" className="mt-24 border-t border-white/10 pt-10">
+        <footer id="contact" className="mt-20 border-t border-white/10 pt-8 md:mt-24 md:pt-10">
           <ContactBar />
           <p className="mt-8 text-xs text-gray-600">
             © {new Date().getFullYear()} edits.byhasil — Hasil Raj Shakya.
+          </p>
+          <p className="mt-2 text-xs text-gray-600">
+            Made by{" "}
+            <a
+              href="https://shakya-rohan.com.np"
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted underline-offset-4 transition-colors hover:text-ink hover:underline"
+            >
+              Rohan Shakya
+            </a>
           </p>
         </footer>
       </div>

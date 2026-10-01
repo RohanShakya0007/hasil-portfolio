@@ -4,7 +4,8 @@ import { videoUrls } from "../videos";
 
 const ASPECT_CLASS = {
   landscape: "aspect-[16/9]",
-  portrait: "aspect-[9/16]",
+  // Portrait clips soften to 4:5 on phones so they do not dominate the viewport
+  portrait: "aspect-[4/5] sm:aspect-[9/16]",
 };
 
 function ReelCard({
@@ -51,7 +52,7 @@ function ReelCard({
     >
       <Shell
         {...shellProps}
-        className={`relative block w-full overflow-hidden rounded-3xl bg-white/[0.04] text-left shadow-[0_30px_70px_-42px_rgba(0,0,0,1)] ring-1 ring-white/[0.07] transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_40px_90px_-40px_rgba(0,0,0,1)] hover:ring-white/20 focus-visible:ring-2 focus-visible:ring-white/70 ${
+        className={`relative block w-full overflow-hidden rounded-2xl bg-white/[0.04] text-left shadow-[0_30px_70px_-42px_rgba(0,0,0,1)] ring-1 ring-white/[0.07] transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_40px_90px_-40px_rgba(0,0,0,1)] hover:ring-white/20 focus-visible:ring-2 focus-visible:ring-white/70 md:rounded-3xl ${
           interactive ? "cursor-pointer" : ""
         } ${ASPECT_CLASS[aspect] ?? ASPECT_CLASS.portrait}`}
       >
@@ -80,7 +81,7 @@ function ReelCard({
         )}
 
         {title && (
-          <div className="pointer-events-none absolute inset-x-3 bottom-3 flex translate-y-3 items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 opacity-0 backdrop-blur-xl transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+          <div className="touch-reveal pointer-events-none absolute inset-x-3 bottom-3 flex translate-y-3 items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 opacity-0 backdrop-blur-xl transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 md:inset-x-4 md:bottom-4">
             <span className="truncate text-sm font-semibold text-white md:text-base">
               {title}
             </span>
