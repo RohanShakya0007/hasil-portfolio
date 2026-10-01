@@ -49,7 +49,7 @@ function About() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           >
             <h3 className="text-lg font-medium text-ink sm:text-xl">Profile</h3>
-            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted sm:text-base">
+            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted sm:text-[15.5px] md:text-[16px]">
               I&apos;m Hasil Raj Shakya, a video editor and colorist from
               Kathmandu, Nepal. I work across short-form Reels, brand
               campaigns, and long-form edits — shaping raw footage into clear,

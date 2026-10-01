@@ -22,16 +22,10 @@ function Hero() {
           variants={CONTAINER}
           initial="hidden"
           animate="show"
-          className="max-w-4xl text-[2.1rem] font-semibold leading-[1.15] tracking-tight text-ink sm:text-4xl md:ml-16 md:text-6xl lg:ml-32"
+          className="max-w-4xl text-[0.5rem] font-semibold leading-[1.2] tracking-tight text-ink sm:text-4xl md:ml-16 md:text-6xl lg:ml-32"
         >
           <motion.span variants={ITEM} className="block">
-          Video editor
-          </motion.span>
-          <motion.span variants={ITEM} className="block">
-            &amp; colorist turning raw footage
-          </motion.span>
-          <motion.span variants={ITEM} className="block">
-            into stories that feel just right.
+          Video editor &  colorist turning raw footage into powerful visual stories through clean editing, thoughtful color, and creative storytelling.
           </motion.span>
         </motion.h1>
 
@@ -85,7 +79,7 @@ function Hero() {
               Kartik Naach &middot; Patan Durbar Square
             </span>
             <h2 className="text-xl font-bold tracking-tight transition-colors text-paper sm:text-[22px]">
-              Arsimha Avatar Kartik Nach
+              Narsimha Avatar Kartik Nach
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink/80 sm:mt-6 sm:text-lg">
               The Kartik Naach featuring Narasimha is performed annually at Patan
