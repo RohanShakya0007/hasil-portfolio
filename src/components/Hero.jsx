@@ -15,17 +15,18 @@ const ITEM = {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden pt-24 md:pt-36">
-      <CameraDecor />
-
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <motion.h1
           variants={CONTAINER}
           initial="hidden"
           animate="show"
-          className="max-w-4xl text-[0.5rem] font-semibold leading-[1.2] tracking-tight text-ink sm:text-4xl md:ml-16 md:text-6xl lg:ml-32"
+          className="max-w-3xl text-lg font-semibold leading-[1.03] tracking-tight text-ink sm:text-2xl md:text-3xl lg:text-4xl"
         >
           <motion.span variants={ITEM} className="block">
-          Video editor &  colorist turning raw footage into powerful visual stories through clean editing, thoughtful color, and creative storytelling.
+            Video editor &amp; colorist turning raw footage into powerful visual stories
+          </motion.span>
+          <motion.span variants={ITEM} className="block">
+            through clean editing, thoughtful color, and creative storytelling.
           </motion.span>
         </motion.h1>
 
@@ -33,7 +34,7 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-8 border-t border-white/10 pt-8 sm:mt-10"
+          className="mt-10 sm:mt-12"
         >
           <ContactBar />
         </motion.div>
@@ -98,7 +99,7 @@ function Hero() {
             <ReelCard
               aspect="landscape"
               video="v2.mp4"
-              title="Arsimha Avatar Kartik Nach"
+              title="Narsimha Avatar Kartik Nach"
               category="Culture Film"
               eager
             />
@@ -106,36 +107,6 @@ function Hero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function CameraDecor() {
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute -left-20 top-16 hidden w-[380px] select-none md:block md:w-[460px] lg:left-0 lg:w-[520px]"
-    >
-      <svg
-        viewBox="0 0 240 160"
-        fill="none"
-        className="cine-animate-float w-full opacity-[0.26] drop-shadow-[0_0_80px_rgba(255,255,255,0.2)]"
-      >
-        <g stroke="#ffffff" strokeOpacity="0.8" strokeWidth="1.4" strokeLinejoin="round" strokeLinecap="round">
-          <path d="M44 62h92a10 10 0 0 1 10 10v44a10 10 0 0 1-10 10H44a10 10 0 0 1-10-10V72a10 10 0 0 1 10-10Z" />
-          <path d="M146 76h32l24-18v72l-24-18h-32" strokeOpacity="0.55" />
-          <path d="M34 62V46a8 8 0 0 1 8-8h30l12 24" strokeOpacity="0.7" />
-          <path d="M78 38h40a10 10 0 0 1 10 10v14" strokeOpacity="0.7" />
-          <circle cx="88" cy="94" r="25" />
-          <circle cx="88" cy="94" r="17" strokeOpacity="0.4" />
-          <circle cx="88" cy="94" r="6" strokeOpacity="0.55" />
-          <circle cx="53" cy="47" r="21" />
-          <circle cx="53" cy="47" r="8" strokeOpacity="0.4" />
-          <circle cx="103" cy="47" r="21" />
-          <circle cx="103" cy="47" r="8" strokeOpacity="0.4" />
-          <path d="M184 80h32v28h-32" strokeOpacity="0.35" />
-        </g>
-      </svg>
-    </div>
   );
 }
 
