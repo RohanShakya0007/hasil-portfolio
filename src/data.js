@@ -150,12 +150,12 @@ export const education = [
 ];
 
 export const softwares = [
-  { id: "davinci", name: "DaVinci Resolve", color: "#FF6B35", abbr: "DaVinci" },
-  { id: "after-effects", name: "After Effects", color: "#9999FF", abbr: "Ae" },
-  { id: "premiere", name: "Premiere Pro", color: "#9999FF", abbr: "Pr" },
-  { id: "capcut", name: "CapCut", color: "#00E5FF", abbr: "CapCut" },
-  { id: "illustrator", name: "Illustrator", color: "#FF9A00", abbr: "Ai" },
-  { id: "photoshop", name: "Photoshop", color: "#31A8FF", abbr: "Ps" },
-  { id: "lightroom", name: "Lightroom", color: "#31A8FF", abbr: "Lr" },
-  { id: "maya", name: "Autodesk Maya", color: "#37A5CC", abbr: "M" },
+  { id: "davinci", name: "DaVinci Resolve", color: "#FF6B35", abbr: "DaVinci", progress: 0.85 },
+  { id: "after-effects", name: "After Effects", color: "#9999FF", abbr: "Ae", progress: 0.7 },
+  { id: "premiere", name: "Premiere Pro", color: "#9999FF", abbr: "Pr", progress: 0.78 },
+  { id: "capcut", name: "CapCut", color: "#00E5FF", abbr: "CapCut", progress: 0.9 },
+  { id: "illustrator", name: "Illustrator", color: "#FF9A00", abbr: "Ai", progress: 0.68 },
+  { id: "photoshop", name: "Photoshop", color: "#31A8FF", abbr: "Ps", progress: 0.68 },
+  { id: "lightroom", name: "Lightroom", color: "#31A8FF", abbr: "Lr", progress: 0.75 },
+  { id: "maya", name: "Autodesk Maya", color: "#37A5CC", abbr: "M", progress: 0.4 },
 ];

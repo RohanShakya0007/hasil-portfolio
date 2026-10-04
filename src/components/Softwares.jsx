@@ -59,7 +59,7 @@ function Softwares() {
                     stroke={sw.color}
                     strokeWidth="2"
                     strokeLinecap="round"
-                    strokeDasharray={`${0.92 * 2 * Math.PI * 54} ${2 * Math.PI * 54}`}
+                    strokeDasharray={`${(sw.progress ?? 0.7) * 2 * Math.PI * 54} ${2 * Math.PI * 54}`}
                     className="opacity-70 transition-opacity duration-500 group-hover:opacity-100"
                   />
                 </svg>
