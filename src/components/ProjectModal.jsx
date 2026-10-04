@@ -83,6 +83,7 @@ function ProjectModal({ project, onClose }) {
                 loop
                 playsInline
                 controls
+                controlsList="nodownload noplaybackrate"
                 preload="auto"
               />
             </div>
