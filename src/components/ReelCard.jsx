@@ -33,7 +33,7 @@ function ReelCard({
           el.pause();
         }
       },
-      { rootMargin: "150px 0px" },
+      { rootMargin: "250px 0px" },
     );
 
     observer.observe(el);
@@ -61,11 +61,10 @@ function ReelCard({
             ref={videoRef}
             src={videoUrls[video]}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.07]"
-            autoPlay
             muted
             loop
             playsInline
-            preload={eager ? "auto" : "metadata"}
+            preload={eager ? "metadata" : "none"}
           />
         )}
 

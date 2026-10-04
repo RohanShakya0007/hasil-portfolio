@@ -82,11 +82,11 @@ export const experience = [
     range: "2026 - Present",
     role: "Video Editor & Video Grapher ",
     bullets: [
-      "Take charge of post-production for client content, from assembly to final grade.",
-      "Build mood-based color palettes so every project keeps a clean, consistent look.",
+      " Edit angaging social media reels & short-form videos for brands & clients.",
+      "Edit brand videos with a focus on clean cuts, color correction, pacing, & storytelling.",
       "Shoot social media content for clients, from planning the shots to capturing the footage.",
-      "Cut short-form Reels and long-form projects, shaping pacing and story flow.",
-      "Collaborate closely with directors and motion designers on brand-led edits.",
+      " Work with coordinators to understand their ideas & turn them into engaging visual content.",
+      "Manage the editing process from raw footage to the final video, ready for social media.",
     ],
   },
   {
@@ -94,9 +94,11 @@ export const experience = [
     range: "2025 - 2026",
     role: "Video Editor",
     bullets: [
-      "Edited digital marketing content for brand campaigns and social channels.",
-      "Color graded raw footage and synchronized audio for seamless delivery.",
-      "Managed delivery of final exports across multiple aspect ratios and formats.",
+      "Editing reels, promotional videos, and social media content",
+      "Working with Premiere Pro, After effect, Davinci Resolve for video editing.",
+      "Color correction and basic sound design for better video quality",
+      "Meeting project deadline.",
+      "Collaborating with Digital Marketers, Videographer for better understanding of project.",
     ],
   },
   {
@@ -104,9 +106,11 @@ export const experience = [
     range: "2023 - 2025",
     role: "Video Editor & Video Grapher",
     bullets: [
-      "Handled end-to-end editing, motion graphics, and sound design for client projects.",
-      "Shot and edited event, music, and promotional videos on location.",
-      "Introduced simple color-workflow improvements that cut turnaround times.",
+      " Edited reels, promotional videos, and social media content.",
+      " Worked with Adobe Premiere Pro and After Effects for video editing and motion graphics.",
+      "Performed color correction and basic sound design to improve video quality.",
+      "Delivered projects within deadlines while maintaining high-quality standards.",
+      "Collaborated with Digital marketers and Videographer to meet project requirements.",
     ],
   },
   {
@@ -114,8 +118,9 @@ export const experience = [
     range: "2023",
     role: "Freelance Graphic Designer",
     bullets: [
-      "Designed print and digital collateral including brochures, flyers, and social assets.",
-      "Built clean, adventure-branded layouts that matched the travel experience.",
+      "Making detailed travel itinerary.",
+      "Worked with Adobe illustrator & Photoshop for designing.",
+      "Delivered projects on deadline without compromizing quality.",
     ],
   },
 ];
