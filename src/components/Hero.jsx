@@ -14,18 +14,18 @@ const ITEM = {
 
 function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-24 md:pt-36">
+    <section id="home" className="relative overflow-hidden pt-20 sm:pt-24 md:pt-32 lg:pt-36">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <motion.h1
           variants={CONTAINER}
           initial="hidden"
           animate="show"
-          className="max-w-3xl text-lg font-semibold leading-[1.03] tracking-tight text-ink sm:text-2xl md:text-3xl lg:text-4xl"
+          className="max-w-6xl text-[clamp(1.5rem,1.05rem+2vw,1.875rem)] font-semibold leading-[1.15] tracking-tight text-ink"
         >
           <motion.span variants={ITEM} className="block">
             Video editor &amp; colorist turning raw footage into powerful visual stories
           </motion.span>
-          <motion.span variants={ITEM} className="block">
+          <motion.span variants={ITEM} className="mt-1.5 block text-balance lg:mt-2">
             through clean editing, thoughtful color, and creative storytelling.
           </motion.span>
         </motion.h1>
@@ -39,7 +39,7 @@ function Hero() {
           <ContactBar />
         </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-12 grid grid-cols-1 items-center gap-10 sm:mt-16 sm:gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,8 +49,7 @@ function Hero() {
             <ReelCard
               aspect="landscape"
               video="v1.mp4"
-              title="Every Frame Has A Story"
-              category="Showreel"
+             
             />
           </motion.div>
 
@@ -99,9 +98,6 @@ function Hero() {
             <ReelCard
               aspect="landscape"
               video="v2.mp4"
-              title="Narsimha Avatar Kartik Nach"
-              category="Culture Film"
-              eager
             />
           </motion.div>
         </div>

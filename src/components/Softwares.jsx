@@ -1,5 +1,5 @@
 import { softwares } from "../data";
-import { BrandIcon } from "./brandIcons";
+import { BrandIcon, ICONS } from "./brandIcons";
 import { motion } from "framer-motion";
 
 function alpha(hex, opacity) {
@@ -75,7 +75,11 @@ function Softwares() {
                   <BrandIcon
                     id={sw.id}
                     color={sw.color}
-                    className="h-[46%] w-[46%] drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+                    className={`h-[46%] w-[46%] ${
+                      ICONS[sw.id]?.stroke
+                        ? ""
+                        : "drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+                    }`}
                   />
                 </span>
               </div>

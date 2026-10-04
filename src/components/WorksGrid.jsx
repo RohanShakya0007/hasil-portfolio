@@ -4,19 +4,12 @@ import ReelCard from "./ReelCard";
 import ProjectModal from "./ProjectModal";
 import { worksGroups } from "../data";
 
-const DESKTOP_COLUMNS = 3;
-
-const COLUMN_CLASS = {
-  2: "lg:grid-cols-2",
-  3: "lg:grid-cols-3",
-};
-
 const REVEAL = {
   hidden: { opacity: 0, y: 44 },
   show: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: Math.min(i * 0.05, 0.4) },
   }),
 };
 
@@ -37,18 +30,10 @@ function useOpenProject() {
   return { project, open, close };
 }
 
-function spread(items, columns) {
-  const cols = Array.from({ length: columns }, () => []);
-  items.forEach((item, i) => cols[i % columns].push(item));
-  return cols;
-}
-
 function getLayout(clips) {
-  const portrait = clips.filter((clip) => clip.aspect === "portrait");
   return {
     landscape: clips.filter((clip) => clip.aspect === "landscape"),
-    portrait,
-    columns: portrait.length > 2 ? DESKTOP_COLUMNS : 2,
+    portrait: clips.filter((clip) => clip.aspect === "portrait"),
   };
 }
 
@@ -73,7 +58,7 @@ function WorksGrid() {
 }
 
 function Group({ group, onOpen }) {
-  const { landscape, portrait, columns } = getLayout(group.clips);
+  const { landscape, portrait } = getLayout(group.clips);
 
   return (
     <div>
@@ -81,7 +66,7 @@ function Group({ group, onOpen }) {
 
       {landscape.length > 0 && (
         <div
-          className={`grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 ${
+          className={`grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:gap-8 ${
             landscape.length === 1 ? "sm:max-w-3xl" : ""
           }`}
         >
@@ -102,24 +87,20 @@ function Group({ group, onOpen }) {
 
       {portrait.length > 0 && (
         <div
-          className={`grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 ${COLUMN_CLASS[columns]} ${
+          className={`grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8 ${
             landscape.length > 0 ? "mt-6 lg:mt-8" : ""
           }`}
         >
-          {spread(portrait, columns).map((column, c) => (
-            <div key={c} className="contents sm:flex sm:flex-col sm:gap-6 lg:gap-8">
-              {column.map((clip, i) => (
-                <ReelCard
-                  key={clip.id}
-                  aspect="portrait"
-                  video={clip.video}
-                  title={clip.title}
-                  category={clip.category}
-                  onClick={() => onOpen(clip)}
-                  motionProps={cardMotion(c * 0.08 + i * 0.05)}
-                />
-              ))}
-            </div>
+          {portrait.map((clip, i) => (
+            <ReelCard
+              key={clip.id}
+              aspect="portrait"
+              video={clip.video}
+              title={clip.title}
+              category={clip.category}
+              onClick={() => onOpen(clip)}
+              motionProps={cardMotion(i)}
+            />
           ))}
         </div>
       )}

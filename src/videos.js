@@ -1,5 +1,6 @@
 const modules = import.meta.glob(
   [
+    "../Videos/Videos/E v*.mp4",
     "../Videos/Videos/G v*.mp4",
     "../Videos/Videos/N v*.mp4",
     "../Videos/Videos/v1.mp4",

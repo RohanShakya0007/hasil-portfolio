@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import CinematicBackground from "./components/CinematicBackground";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -20,6 +21,7 @@ function App() {
         <Softwares />
         <About />
       </main>
+      <Analytics />
     </div>
   );
 }

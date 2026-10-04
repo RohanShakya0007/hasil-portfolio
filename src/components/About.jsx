@@ -17,7 +17,7 @@ function About() {
           About
         </motion.h2>
 
-        <div className="grid grid-cols-1 items-start gap-10 sm:max-w-sm md:max-w-none md:grid-cols-2 md:gap-16">
+        <div className="grid grid-cols-1 items-start gap-10 sm:max-w-md md:max-w-none md:grid-cols-2 md:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,12 +50,7 @@ function About() {
           >
             <h3 className="text-lg font-medium text-ink sm:text-xl">Profile</h3>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted sm:text-[15.5px] md:text-[16px]">
-              I&apos;m Hasil Raj Shakya, a video editor and colorist from
-              Kathmandu, Nepal. I work across short-form Reels, brand
-              campaigns, and long-form edits — shaping raw footage into clear,
-              emotionally-driven stories. With a trained eye for color, pacing,
-              and sound, I make every cut feel intentional and every frame look
-              the way it was meant to look.
+              I&apos;m a creative Video Editor and Colorist focused on turning raw footage into polished, engaging visual stories. I bring together editing, color, and storytelling to create content that connects with audiences and leaves an impact.
             </p>
 
             <div className="mt-8 max-w-xl border-t border-white/10">
@@ -67,7 +62,7 @@ function About() {
               </div>
               <div className="flex items-center justify-between py-3.5">
                 <span className="text-sm text-muted">Age</span>
-                <span className="text-sm font-medium text-ink">25 Yrs</span>
+                <span className="text-sm font-medium text-ink">26 Yrs</span>
               </div>
             </div>
 
