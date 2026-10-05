@@ -70,22 +70,22 @@ function ProjectModal({ project, onClose }) {
             </div>
 
             <div className="mt-5 overflow-hidden rounded-2xl bg-black">
-              <video
-                key={project.clip.id}
-                src={videoUrls[project.clip.video]}
-                className={`w-full ${
-                  project.clip.aspect === "portrait"
-                    ? "max-h-[52vh] object-contain sm:max-h-[58vh]"
-                    : "aspect-[16/9] object-cover"
-                }`}
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-                controlsList="nodownload noplaybackrate"
-                preload="auto"
-              />
+<video
+                  key={project.clip.id}
+                  src={videoUrls[project.clip.video]}
+                  className={`w-full ${
+                    project.clip.aspect === "portrait"
+                      ? "max-h-[52vh] object-contain sm:max-h-[58vh]"
+                      : "aspect-[16/9] object-cover"
+                  }`}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  controlsList="nodownload noplaybackrate"
+                  preload="auto"
+                />
             </div>
 
             <dl className="mt-6 grid grid-cols-2 gap-x-4 gap-y-5 border-t border-white/10 pt-6 text-sm sm:gap-x-6 md:grid-cols-4">

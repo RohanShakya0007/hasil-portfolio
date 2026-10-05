@@ -128,7 +128,7 @@ export const experience = [
 export const education = [
   {
     status: "Running",
-    degree: "Masters in Business Administration (MBA)",
+    degree: "Masters of Business Administration (MBA)",
     institution: "Mega National College",
   },
   {
