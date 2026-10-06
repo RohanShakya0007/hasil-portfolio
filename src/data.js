@@ -59,6 +59,9 @@ export const worksGroups = [
       { id: "V18", aspect: "portrait", video: "N v10.mp4" },
       { id: "V19", aspect: "portrait", video: "N v11.mp4" },
       { id: "V20", aspect: "portrait", video: "N v12.mp4" },
+      { id: "V42", aspect: "portrait", video: "N v13.mp4" },
+      { id: "V43", aspect: "portrait", video: "N v14.mp4" },
+      { id: "V44", aspect: "portrait", video: "N v15.mp4" },
     ],
   },
   {
